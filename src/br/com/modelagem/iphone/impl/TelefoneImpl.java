@@ -1,24 +1,35 @@
 package br.com.modelagem.iphone.impl;
 
+import java.util.List;
+
 import br.com.modelagem.iphone.interfaces.Telefone;
 
 public class TelefoneImpl implements Telefone {
 
+	private List<String> listaContatos;
+	private int index;	 
+
+
+	public TelefoneImpl(List<String> listaContatos) {
+		super();
+		this.listaContatos = listaContatos;
+	}	
+	
 	@Override
 	public void ligar(String numero) {
-		// TODO Auto-generated method stub
+		System.out.println("ligando para o numero " + listaContatos.get(index));
 		
 	}
 
 	@Override
 	public void atender() {
-		// TODO Auto-generated method stub
+		System.out.println("Atender ligacao");
 		
 	}
 
 	@Override
 	public void iniciarCorreioVoz() {
-		// TODO Auto-generated method stub
+		System.out.println("Iniciar Correio de Voz");
 		
 	}
 

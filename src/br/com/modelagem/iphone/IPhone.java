@@ -3,55 +3,61 @@ package br.com.modelagem.iphone;
 import br.com.modelagem.iphone.interfaces.Navegador;
 import br.com.modelagem.iphone.interfaces.ReprodutorMusical;
 import br.com.modelagem.iphone.interfaces.Telefone;
+import br.com.modelagem.so.SistemaOperacional;
 
-//Classe que representa o iPhone com as funcionalidades
-class iPhone implements ReprodutorMusical, Telefone, Navegador {
-	
-	// Implementação dos métodos da interface ReprodutorMusical
+public class IPhone implements ReprodutorMusical, Telefone, Navegador {
+
+	private SistemaOperacional sistemaOperacional;
+
+	public IPhone() {
+		sistemaOperacional = new SistemaOperacional();
+	}
+
+	// Implementação dos métodos da interface reprodutor
 	@Override
 	public void tocar() {
-		// Implementação da funcionalidade de tocar música
+		sistemaOperacional.getReprodutorMusical().tocar();
 	}
 
 	@Override
 	public void pausar() {
-		// Implementação da funcionalidade de pausar música
+		sistemaOperacional.getReprodutorMusical().pausar();
 	}
 
 	@Override
 	public void selecionarMusica(String musica) {
-		// Implementação da funcionalidade de selecionar música
+		sistemaOperacional.getReprodutorMusical().selecionarMusica(musica);
 	}
 
 	// Implementação dos métodos da interface Telefone
 	@Override
 	public void ligar(String numero) {
-		// Implementação da funcionalidade de fazer uma ligação
+		sistemaOperacional.getTelefone().ligar(numero);
 	}
 
 	@Override
 	public void atender() {
-		// Implementação da funcionalidade de atender uma chamada
+		sistemaOperacional.getTelefone().atender();
 	}
 
 	@Override
 	public void iniciarCorreioVoz() {
-		// Implementação da funcionalidade de iniciar o correio de voz
+		sistemaOperacional.getTelefone().iniciarCorreioVoz();
 	}
 
 	// Implementação dos métodos da interface Navegador
 	@Override
 	public void exibirPagina(String url) {
-		// Implementação da funcionalidade de exibir uma página web
+		sistemaOperacional.getNavegador().exibirPagina(url);
 	}
 
 	@Override
 	public void adicionarNovaAba() {
-		// Implementação da funcionalidade de adicionar uma nova aba
+		sistemaOperacional.getNavegador().adicionarNovaAba();
 	}
 
 	@Override
 	public void atualizarPagina() {
-		// Implementação da funcionalidade de atualizar uma página web
+		sistemaOperacional.getNavegador().atualizarPagina();
 	}
 }

@@ -6,20 +6,19 @@ public class NavegadorImpl implements Navegador {
 
 	@Override
 	public void exibirPagina(String url) {
-		// TODO Auto-generated method stub
+		System.out.println("Exibindo a pagina "+url);
 		
 	}
 
 	@Override
 	public void adicionarNovaAba() {
-		// TODO Auto-generated method stub
+		System.out.println("Adicional nova aba no navegador");
 		
 	}
 
 	@Override
 	public void atualizarPagina() {
-		// TODO Auto-generated method stub
-		
+		System.out.println("Atualizando aba atual");		
 	}
 
 
